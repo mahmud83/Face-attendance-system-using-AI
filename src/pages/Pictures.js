@@ -1,13 +1,15 @@
-import React, { Component} from 'react';
-import {  StyleSheet, View, Text, StatusBar,TouchableOpacity,SafeAreaView,ScrollView ,TextInput,YellowBox,Button} from 'react-native';
+import React, { Component } from 'react';
+import { Text, View, StyleSheet,StatusBar,TextInput, Image, TouchableOpacity, Button,AsyncStorage} from 'react-native';
 import {Actions} from 'react-native-router-flux';
 import RNPickerSelect from 'react-native-picker-select';
 
+export default class Attend extends Component {
+	_call2(){
+		
+	    Actions.imgup();
+	};
 
-export default class Attendence extends Component {
-    
-  
-   state={
+	state={
     Department:'',
     class:'',
     subject:'',
@@ -15,15 +17,14 @@ export default class Attendence extends Component {
     students: '',
 
    }
-   call(){
-        Actions.imgup();
-    }
-  
-render(){  
-return (
-
-  <View style={styles.container}>
-  <Text style={styles.dept}>Select Department</Text>
+	
+	 render() {
+	    return (
+		    <View style={styles.container}>
+		      	
+		      	<StatusBar backgroundColor="#000000" barStyle="light-content"
+		      	/>
+		      		<Text style={styles.dept}>Select Department</Text>
     <RNPickerSelect
             onValueChange={(value) => this.setState({Department: value})}
             items={[
@@ -82,20 +83,22 @@ return (
                 
             ]}
         />
-        <Button title="Take Attendence" color="black" onPress={this.call()} />
-    </View>
-);
-}
+		           
+		            	<Button 
+		                  onPress={this._call2}
+		                  title="Take Attendance"
+		                  color='#000000'
+		                />
+		            
+		    </View>
+	     );
+	 }
 }
 const styles = StyleSheet.create({
-    main: {
-    flex: 1,
-    backgroundColor: '#4c8bf5',
-  },
   container: {
-    flex:1,
+   flexGrow: 1,
    backgroundColor: '#ffffff',
-    justifyContent:'center'
+   justifyContent:'center'
    
   },
 
@@ -104,4 +107,4 @@ const styles = StyleSheet.create({
     fontSize: 20,
   }
 
- });
+});

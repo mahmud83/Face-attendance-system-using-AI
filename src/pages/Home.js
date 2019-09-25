@@ -47,10 +47,10 @@ export default class Home extends Component {
           Actions.code()
 	}
 	mark(){
-		Actions.mattendance()
+		Actions.pictures()
 	}
 	alert(){
-		Actions.imgup()
+		alert('This feature coming on next update')
 	}
 
 

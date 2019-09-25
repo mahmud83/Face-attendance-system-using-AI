@@ -44,7 +44,7 @@ class ImageLoader extends Component {
 export default class next extends Component {
 		   _call(){
 		  
-			Actions.mattendance();
+			Actions.pictures();
 			};
 
 		   _call2(){

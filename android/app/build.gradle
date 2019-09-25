@@ -192,17 +192,14 @@ android {
 }
 
 dependencies {
-    implementation project(':react-native-image-picker')
-   
 
-  
-        implementation project(':react-native-firebase')
-
+    implementation project(':react-native-image-picker')   
+    implementation project(':react-native-firebase')
     implementation 'com.google.firebase:firebase-analytics:17.2.0'
-      implementation 'com.google.firebase:firebase-database:19.1.0'
-   implementation 'com.google.firebase:firebase-auth:19.0.0'
-implementation 'com.google.android.gms:play-services-auth:17.0.0'
-implementation "com.google.firebase:firebase-storage:17.0.0"
+    implementation 'com.google.firebase:firebase-database:19.1.0'
+    implementation 'com.google.firebase:firebase-auth:19.0.0'
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation "com.google.firebase:firebase-storage:17.0.0"
 
 
     /* --------------------------------

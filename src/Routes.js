@@ -9,10 +9,8 @@ import SchoolCode from './pages/SchoolCode';
 import Loading from './pages/Loading';
 import Home from './pages/Home';
 import DrawerContent from './components/DrawerContent';
-import Mattendance from './pages/Mattendance';
+import Pictures from './pages/Pictures';
 import ImageUpload from './pages/ImageUpload';
-
-
 
 
 export default class Routes extends Component<{}> {
@@ -27,7 +25,6 @@ export default class Routes extends Component<{}> {
 		      <Scene key="flog" component={Flog} hideNavBar={true}/>
 		      <Scene key="ssignup" component={Ssignup} title="Student SignUp"/>
 		      <Scene key="tsignup" component={Tsignup} title="Teacher SignUp"/>
-		  
 		     <Scene key="drawer"
 					drawer
 					contentComponent={DrawerContent}
@@ -36,7 +33,7 @@ export default class Routes extends Component<{}> {
 					hideNavBar={true}
 				>
 				<Scene key="home" component={Home} hideNavBar={true} />
-				    <Scene key="mattendance" component={Mattendance} title="Attendance" />
+				    <Scene key="pictures" component={Pictures} title="Attendance" />
 				       <Scene key="imgup" component={ImageUpload} hideNavBar={true}/>
 				</Scene>
 		     

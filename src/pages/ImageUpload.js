@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, Button, StyleSheet, Alert } from 'react-native';
+import { View, Image, ActivityIndicator,Button, StyleSheet, Alert } from 'react-native';
 
 import ImagePicker from 'react-native-image-picker';
 import firebase from 'react-native-firebase';
@@ -7,7 +7,7 @@ import firebase from 'react-native-firebase';
 const { app } = firebase.storage();
 console.log(app);
 
-export default class App extends Component {
+export default class image extends Component {
   state = {
     photo: null,
   };
@@ -41,6 +41,7 @@ export default class App extends Component {
   }
 
   render() {
+ 
     const { photo } = this.state;
     return (
       <View style={styles.main}>
@@ -64,7 +65,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   main: {
     flex: 1,
-    backgroundColor: '#4c8bf5',
+    backgroundColor: '#ffffff',
   },
 
   container: {
