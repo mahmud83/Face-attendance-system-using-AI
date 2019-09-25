@@ -21,7 +21,7 @@ export default class Code extends Component {
 		}
 		else
 		{
-			alert('wronge collage code');
+			alert('wronge college code');
 		}
 	}
 	componentDidMount() {
@@ -42,8 +42,8 @@ export default class Code extends Component {
 		      	<StatusBar backgroundColor="#000000" barStyle="light-content"
 		      	/>
 		      		<Image
-		                style={{width: 100, height: 120}}
-		                source={require('../Images/Logoo.png')}
+		                style={{resizeMode: 'center'}}
+		                source={require('../Images/Logo.png')}
 		            /> 
 		            <Text style={styles.logoText}>
 		                Enter Collage Code
@@ -69,7 +69,7 @@ export default class Code extends Component {
 const styles = StyleSheet.create({
   container: {
    flexGrow: 1,
-   backgroundColor: '#212121',
+   backgroundColor: '#3d5afe',
    alignItems :'center',
    justifyContent : 'center',
    
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
 
   inputBox: {
   width: 300,
-  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+  backgroundColor: 'rgba(255, 255, 255, 0.3)',
  
   paddingHorizontal: 16,
   fontSize: 16,

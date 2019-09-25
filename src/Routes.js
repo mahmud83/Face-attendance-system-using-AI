@@ -10,7 +10,7 @@ import Loading from './pages/Loading';
 import Home from './pages/Home';
 import DrawerContent from './components/DrawerContent';
 import Mattendance from './pages/Mattendance';
-
+import ImageUpload from './pages/ImageUpload';
 
 
 
@@ -18,7 +18,7 @@ import Mattendance from './pages/Mattendance';
 export default class Routes extends Component<{}> {
 	render() {
 		return( 
-			<Router navigationBarStyle={{ backgroundColor: '#484848' }}>
+			<Router navigationBarStyle={{ backgroundColor: '#3d5afe' }}>
 		    <Stack key="root" >
 		      <Scene key="fpage" component={Fpage} hideNavBar={true} />
 		      <Scene key="code" component={SchoolCode} hideNavBar={true}/>
@@ -35,8 +35,9 @@ export default class Routes extends Component<{}> {
 					hideDrawerButton={true}
 					hideNavBar={true}
 				>
-				<Scene key="home" component={Home} title="Home" />
+				<Scene key="home" component={Home} hideNavBar={true} />
 				    <Scene key="mattendance" component={Mattendance} title="Attendance" />
+				       <Scene key="imgup" component={ImageUpload} hideNavBar={true}/>
 				</Scene>
 		     
 		    </Stack>

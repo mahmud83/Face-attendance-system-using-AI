@@ -60,8 +60,8 @@ export default class ButtonBasics extends Component {
       <View style={styles.container}>
       <StatusBar backgroundColor="#000000" barStyle="light-content" />
       <ImageLoader
-                style={{ width: 120 , height: 140, marginVertical: 230}}
-                source={require('../Images/Logoo.png')}/> 
+                style={{ flex:1, resizeMode: 'center'}}
+                source={require('../Images/Logo.png')}/> 
           
               <Text style={styles.logoText}>
                 Welcome
@@ -78,7 +78,7 @@ export default class ButtonBasics extends Component {
 const styles = StyleSheet.create({
   container: {
    flexGrow: 1,
-   backgroundColor: '#212121',
+   backgroundColor: '#3d5afe',
    alignItems :'center',
    
   },

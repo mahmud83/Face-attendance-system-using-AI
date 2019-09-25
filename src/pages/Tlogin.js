@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
    
   },
   signUP: {
+     backgroundColor: '#212121',
     flexGrow: 1,
     alignItems :'flex-end',
     justifyContent : 'center',

@@ -1,93 +1,104 @@
-import React, { Component } from 'react';
-import {Platform, Alert, SafeAreaView, YellowBox, StyleSheet,Animated, ScrollView,Button, Image,View, Text, StatusBar,TouchableOpacity, TextInput} from 'react-native';
-import {Header, LearnMoreLinks, Colors, DebugInstructions, ReloadInstructions, } from 'react-native/Libraries/NewAppScreen';
-import { Menu, MenuProvider, MenuOptions, MenuOption, MenuTrigger} from "react-native-popup-menu";
-export default class markattendance extends Component {
-    constructor(props) {
-     super(props);
-     YellowBox.ignoreWarnings([
-      'Warning: isMounted(...) is deprecated', 'Module RCTImageLoader'
-     ]);
-    }
-    state={
-    	year: '',
-    	ltype: '',
-    }
-    handleChange =key => val => {
-	this.setState({[key]: val})
-	}
-	render(){
-		return(
-				
-			<View style={styles.container}>
-      			<MenuProvider style={{ padding: 30 }}>
-        			<Menu onSelect={value=>this.setState({year: value})}>
-          				<MenuTrigger  >
-          					<Text style={styles.headerText}>Select class : {this.state.year}</Text>
-          				</MenuTrigger  >
-          				<MenuOptions>
-            			<MenuOption value={"Second year"}>
-							<Text style={styles.menuContent}>Second year</Text>      	
-            			</MenuOption>
-            			<MenuOption value={"Third year"}>
-              				<Text style={styles.menuContent}>Third year</Text>
-            			</MenuOption>
-            			<MenuOption value={"Fourth year"}>
-              				<Text style={styles.menuContent}>Fourth year</Text>
-            			</MenuOption>
-            			<MenuOption value={"event"}>
-              				<Text style={styles.menuContent}>Event</Text>
-            			</MenuOption>
-          				</MenuOptions>
-        			</Menu>
-      			</MenuProvider>
-      			<MenuProvider style={{ padding: 30 }}>
-        			<Menu onSelect={value=>this.setState({ltype: value})}>
-          				<MenuTrigger  >
-          					<Text style={styles.headerText}>Lecture type : {this.state.ltype}</Text>
-          				</MenuTrigger  >
-          				<MenuOptions>
-            			<MenuOption value={"Theory"}>
-							<Text style={styles.menuContent}>Theroy</Text>      	
-            			</MenuOption>
-            			<MenuOption value={"Pratical"}>
-              				<Text style={styles.menuContent}>Practical</Text>
-            			</MenuOption>
-            			<MenuOption>
-              				<TextInput style={styles.inputBox}
-				               	placeholder="Enter Event name"
-				                placeholderTextColor = "#000000"
-				            	//value={this.state.ltype}
-				               onChangeText={this.handleChange('ltype')}				                    
-				             />
-            			</MenuOption>
-          				</MenuOptions>
-        			</Menu>
-      			</MenuProvider>	
-      		</View>
-		)
-	}
-}
+import React, { Component} from 'react';
+import {  StyleSheet, View, Text, StatusBar,TouchableOpacity,SafeAreaView,ScrollView ,TextInput,YellowBox} from 'react-native';
+import {Actions} from 'react-native-router-flux';
+import RNPickerSelect from 'react-native-picker-select';
 
+
+class Attendence extends Component {
+ 
+  
+   state={
+    Department:'',
+    class:'',
+    subject:'',
+    Ltype: '',
+    students: '',
+
+   }
+  
+render(){  
+return (
+  <View style={styles.container}>
+  <Text style={styles.dept}>Select Department</Text>
+    <RNPickerSelect
+            onValueChange={(value) => this.setState({Department: value})}
+            items={[
+                { label: 'Computer Department', value: 'Computer' },
+                { label: 'Civil Department', value: 'Civil Department' },
+                { label: 'Extc Department', value: 'Extc Department' },
+                { label: 'Electrical Department', value: 'Electrical Department' },
+                { label: 'Mechanical Department', value: 'Mechanical Department' },
+            ]}
+        />
+        <Text style={styles.dept}>Select Class</Text>
+        <RNPickerSelect style={{marginVertical: 180}}
+            onValueChange={(value) => this.setState({class: value})}
+            items={[
+                { label: 'Second year', value: 'Second year' },
+                { label: 'Third year', value: 'Third year' },
+                { label: 'Fourth year', value: 'Fourth year' },
+            ]}
+        />
+         <Text style={styles.dept}>Select Subject</Text>
+        <RNPickerSelect style={{marginVertical: 180}}
+            onValueChange={(value) => this.setState({subject: value})}
+            items={[
+                { label: 'DLDA', value: 'DLDA' },
+                { label: 'ECCF', value: 'ECCF' },
+                { label: 'DIS', value: 'DIS' },
+                 { label: 'AM-3', value: 'AM-3' },
+                { label: 'OOPM', value: 'OOPM' },
+                 { label: 'DATA Structure', value: 'DATA Structure' },
+                { label: 'Practical DLDA', value: 'PDLDA' },
+                { label: 'Practical DS', value: 'PDS' },
+                { label: 'Practical ECCF', value: 'PDS' },
+                { label: 'Practical OOPM', value: 'POOPM' },
+                { label: 'Event', value: 'Event' },
+
+            ]}
+        />
+          <Text style={styles.dept}>Lecture Type</Text>
+        <RNPickerSelect style={{marginVertical: 180}}
+            onValueChange={(value) => this.setState({Ltype: value})}
+            items={[
+                { label: 'Practical', value: 'Practical' },
+                { label: 'Theory', value: 'Theory' },
+                { label: 'Event', value: 'Event' },
+                
+            ]}
+        />
+        <Text style={styles.dept}>Select students</Text>
+        <RNPickerSelect style={{marginVertical: 180}}
+            onValueChange={(value) => this.setState({students: value})}
+            items={[
+                { label: 'S1 Batch', value: 'S1 Batch' },
+                { label: 'S2 Batch', value: 'S2 Batch' },
+                { label: 'S3 Batch', value: 'S3 Batch' },
+                { label: 'Full Class', value: 'Full Class' },
+                
+            ]}
+        />
+    </View>
+     
+  
+  
+
+);
+}
+}
 const styles = StyleSheet.create({
   container: {
-   flex: 1,
-   backgroundColor: '#212121',
+    flex:1,
+   backgroundColor: '#ffffff',
+    justifyContent:'center'
+   
   },
-  
-    headerText: {
-    	fontSize: 20,
-    	margin: 10,
-    	fontWeight: "bold",
-        color : 'rgba(255, 255, 255, 0.7)'
-  },
-  menuContent: {
-    fontWeight: "bold",
-    padding: 2,
-    fontSize: 20,
-    color : '#000000'
 
+  dept:{
+    color: '#ffbd45',
+    fontSize: 20,
   }
 
-
  });
+
+export default Attendence;

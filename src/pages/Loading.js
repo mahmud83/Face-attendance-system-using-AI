@@ -73,8 +73,8 @@ export default class Loading extends React.Component {
       <View style={styles.container}>
       <StatusBar backgroundColor="#000000" barStyle="light-content" />
       <Image
-                style={{ width: 120 , height: 140, marginVertical: 230}}
-                source={require('../Images/Logoo.png')}/> 
+                style={{ flex:2, resizeMode: 'center'}}
+                source={require('../Images/Logo.png')}/> 
        <Text style={{fontSize: 30,
       color : 'rgba(255, 255, 255, 0.7)'}}>Loading</Text>
        <ActivityIndicator size="large" /> 
@@ -86,7 +86,7 @@ export default class Loading extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#212121',
+    backgroundColor: '#3d5afe',
     alignItems: 'center',
     }
   }
