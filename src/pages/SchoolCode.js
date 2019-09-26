@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet,StatusBar,TextInput, Image, TouchableOpacity, Button,AsyncStorage} from 'react-native';
+import { Text, View, StyleSheet,StatusBar,TextInput, Image, TouchableOpacity, Button,AsyncStorage,ImageBackground} from 'react-native';
 import {Actions} from 'react-native-router-flux';
 import firebase from 'firebase';
 export default class Code extends Component {
@@ -34,6 +34,7 @@ export default class Code extends Component {
 	}
 	 render() {
 	    return (
+	    	<ImageBackground source={require('../Images/backg.png')} style={{width: '100%', height: '100%'}}>
 		    <View style={styles.container}>
 		      	{this.state.errorMessage &&
 		        <Text style={{ color: 'red' }}>
@@ -54,26 +55,29 @@ export default class Code extends Component {
 			            value={this.state.scode}
 			            onChangeText={this.handleChange('incode')}        
 		            />
-		            <TouchableOpacity>
-		            	<Button 
-		                  onPress={this._call2}
-		                  title="Take me inn"
-		                  color='rgba(255, 255, 255, 0.1)'
-		                />
-		            </TouchableOpacity>
+		            <TouchableOpacity style={{marginVertical: 15, width: 150, backgroundColor: 'rgba(255, 255, 255, 0.1)', textAlign: 'center', borderRadius: 10,}} onPress={this._call2}>
+              			<Text style={styles.logotext}>Take me inn</Text>
+            		</TouchableOpacity>
 		            <TouchableOpacity onPress={this._call}><Text style={styles.text}>Don't have code</Text></TouchableOpacity>
 		    </View>
+		    	</ImageBackground>
 	     );
 	 }
 }
 const styles = StyleSheet.create({
   container: {
    flexGrow: 1,
-   backgroundColor: '#3d5afe',
    alignItems :'center',
    justifyContent : 'center',
    
   },
+   logotext : {
+      marginVertical: 7,
+      fontSize: 18,
+      color: '#ffffff',
+      textAlign: 'center',
+    },
+ 
 
   logoText : {
       marginVertical: 50,
@@ -94,6 +98,6 @@ const styles = StyleSheet.create({
   text : {
       marginVertical: 50,
       fontSize: 15,
-      color : 'rgba(255, 255, 255, 0.5)'
+      color : 'rgba(255, 255, 255, 0.7)'
     },
 });

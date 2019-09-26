@@ -27,7 +27,7 @@ _call2(){
                  />
                   </TouchableOpacity>
          <View style={styles.signUP}>
-          <Text style={styles.sign}>Dont have an Account.</Text>
+          <Text style={styles.sign}>Don't have an Account.</Text>
           <TouchableOpacity onPress={this._call}><Text style={styles.sign}> Signup</Text></TouchableOpacity>
          </View>
       </View>
@@ -38,13 +38,13 @@ _call2(){
 const styles = StyleSheet.create({
   container: {
    flexGrow: 1,
-   backgroundColor: '#212121',
+   backgroundColor: '#3d5afe',
    alignItems :'center',
    justifyContent : 'center',
    
   },
   signUP: {
-     backgroundColor: '#212121',
+     backgroundColor: '#3d5afe',
     flexGrow: 1,
     alignItems :'flex-end',
     justifyContent : 'center',

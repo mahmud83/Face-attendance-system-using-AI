@@ -66,12 +66,12 @@ export default class Home extends Component {
   							<View style={styles.tile}>
   								<TouchableOpacity onPress={this.mark}> 
   									<ImageLoader
-                					style={{width: 130, height: 120, borderRadius: 15,}}
+                					style={{width: 150, height: 120, borderRadius: 15,}}
                 					source={require('../Images/tile1.png')}/>
 								</TouchableOpacity> 
   								<TouchableOpacity onPress={this.alert}> 
          							<ImageLoader
-					                style={{marginHorizontal: 20, width: 130, height: 120, borderRadius: 15,}}
+					                style={{marginHorizontal: 20, width: 120, height: 120, borderRadius: 15,}}
 					                source={require('../Images/tile2.png')}/>
   								</TouchableOpacity> 
  							 </View>
@@ -83,16 +83,16 @@ export default class Home extends Component {
   							<View style={styles.tile}>
 					            <TouchableOpacity onPress={this.alert}> 
 						            <ImageLoader
-						            style={{marginVertical: 1,  width: 130, height: 120, borderRadius: 15,}}
+						            style={{marginVertical: 1,  width: 130, height: 150, borderRadius: 15,}}
 						            source={require('../Images/tile4.png')}/>
 					            </TouchableOpacity> 
 					            <TouchableOpacity onPress={this.alert}> 
 					            	<ImageLoader
-					                style={{marginVertical: 1, marginHorizontal: 20, width: 130, height: 120, borderRadius: 15,}}
+					                style={{marginVertical: 1, marginHorizontal: 20, width: 120, height: 120, borderRadius: 15,}}
 					                source={require('../Images/title5.png')}/>
 					            </TouchableOpacity> 
  							</View> 
-  								<TouchableOpacity onPress={this._call2}> 
+  								<TouchableOpacity onPress={this.alert}> 
     								<ImageLoader
 					                style={{marginVertical: 20,  width: 280, height: 80, borderRadius: 15,}}
 					                source={require('../Images/tile6.png')}/>
@@ -108,7 +108,7 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
   container: {
    flex: 1,
-   backgroundColor: '#3d5afe',
+   
    alignItems :'center',
    justifyContent: 'center',
   

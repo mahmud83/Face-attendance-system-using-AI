@@ -27,7 +27,7 @@ export default class Signup extends Component<{}> {
 const styles = StyleSheet.create({
   container: {
    flexGrow: 1,
-   backgroundColor: '#212121',
+   backgroundColor: '#3d5afe',
    alignItems :'center',
    justifyContent : 'center',
    
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   },
 
   sign: {
-    color: 'rgba(255, 255, 255, 0.7)',
+    color: '#3d5afe',
     fontSize: 18
   },
 });

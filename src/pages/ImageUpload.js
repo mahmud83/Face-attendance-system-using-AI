@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, ActivityIndicator,Button, StyleSheet, Alert } from 'react-native';
+import { View, Image, ActivityIndicator,Button, StyleSheet, Alert,ImageBackground } from 'react-native';
 
 import ImagePicker from 'react-native-image-picker';
 import firebase from 'react-native-firebase';
@@ -44,6 +44,7 @@ export default class image extends Component {
  
     const { photo } = this.state;
     return (
+       <ImageBackground source={require('../Images/backg.png')} style={{width: '100%', height: '100%'}}>
       <View style={styles.main}>
         <View style={styles.container}>
           <Image
@@ -58,6 +59,7 @@ export default class image extends Component {
           )}
         </View>
       </View>
+      </ImageBackground>
     );
   }
 }
@@ -65,7 +67,6 @@ export default class image extends Component {
 const styles = StyleSheet.create({
   main: {
     flex: 1,
-    backgroundColor: '#ffffff',
   },
 
   container: {

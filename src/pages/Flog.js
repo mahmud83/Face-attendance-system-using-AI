@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet,StatusBar,Image,Button,TouchableOpacity} from 'react-native';
 import {Actions} from 'react-native-router-flux';
+import Logo from '../components/Logo';
 
 export default class Flog extends Component {
 
@@ -14,29 +15,17 @@ _onPressButton() {
     return (
       <View style={styles.container}>
       <StatusBar backgroundColor="#000000" barStyle="light-content" />
-          <Image
-              style={{width: 100, height: 120}}
-              source={require('../Images/Logoo.png')}/>  
-            <Text style={styles.logoText}>
-                Get Started as 
-                </Text>
-        <TouchableOpacity>
+          <Logo type="Get Started as"/>  
+       
         <View style={styles.buttonContainer}>
-          <Button
-            onPress={this._onPressButton}
-            title="    Teacher    "
-            color='rgba(255, 255, 255, 0.1)'
-          />
-        </View>
-        <View style={styles.buttonContainer}>
-          <Button
-            onPress={this._callToStudent}
-            title="    Student    "
-            color='rgba(255, 255, 255, 0.1)'
-          />
+         <TouchableOpacity style={{width: 150, backgroundColor: '#3d5afe', textAlign: 'center'}} onPress={this._onPressButton}>
+              <Text style={styles.logoText}>Teacher</Text>
+            </TouchableOpacity>
+          <TouchableOpacity style={{marginHorizontal: 7, width: 150,  backgroundColor: '#3d5afe', textAlign: 'center'}} onPress={this._callToStudent}>
+              <Text style={styles.logoText}>Student</Text>
+            </TouchableOpacity>
           
         </View>
-       </TouchableOpacity> 
       </View>
     );
   }
@@ -46,20 +35,20 @@ _onPressButton() {
   const styles = StyleSheet.create({
   container : {
     flex: 1,
-    backgroundColor: '#212121',
+    backgroundColor: '#ffffff',
     alignItems :'center',
     justifyContent : 'center',
   },
   
    buttonContainer: {
-    margin: 20,
-   
+   flexDirection: 'row',
+   padding: 20,
   },
-
-  logoText : {
-      marginVertical: 50,
-      fontSize: 30,
-      color : 'rgba(255, 255, 255, 0.7)'
+    logoText : {
+      marginVertical: 7,
+      fontSize: 18,
+      color: '#ffffff',
+      textAlign: 'center',
     },
  
 });
